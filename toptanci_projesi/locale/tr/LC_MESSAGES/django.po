@@ -1,0 +1,295 @@
+# Turkish translations for Papirus SYS
+msgid ""
+msgstr ""
+"Project-Id-Version: Papirus SYS\n"
+"POT-Creation-Date: 2026-04-23 18:03+0300\n"
+"PO-Revision-Date: 2026-04-23 18:03+0300\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\templates\base.html:32 .\templates\inventory\dashboard.html:6
+msgid "Dashboard"
+msgstr "Anasayfa"
+
+#: .\templates\base.html:36 .\templates\inventory\product_list.html:129
+msgid "Products"
+msgstr "Ürünler"
+
+#: .\templates\base.html:40 .\templates\inventory\product_list.html:16
+msgid "Product Management"
+msgstr "Ürün Yönetimi"
+
+#: .\templates\base.html:46
+msgid "Stock Movements"
+msgstr "Stok Hareketleri"
+
+#: .\templates\base.html:93 .\templates\base.html:134
+msgid "Logout"
+msgstr "Çıkış Yap"
+
+#: .\templates\base.html:124
+msgid "Confirm Logout"
+msgstr "Çıkış Yapılacak?"
+
+#: .\templates\base.html:129
+msgid "Select the logout button below to end your current session."
+msgstr "Geçerli oturumu sonlandırmak için aşağıdaki \"Çıkış Yap\" butonunu seçin."
+
+#: .\templates\base.html:133 .\templates\inventory\product_form.html:20
+msgid "Cancel"
+msgstr "İptal"
+
+#: .\templates\inventory\all_stock_movements.html:11
+msgid "All Stock Movements"
+msgstr "Tüm Stok Hareketleri"
+
+#: .\templates\inventory\all_stock_movements.html:16
+msgid "Movement Log"
+msgstr "Hareket Defteri"
+
+#: .\templates\inventory\all_stock_movements.html:23
+#: .\templates\inventory\stock_history.html:27
+msgid "Date"
+msgstr "Tarih"
+
+#: .\templates\inventory\all_stock_movements.html:24
+msgid "Product"
+msgstr "Ürün"
+
+#: .\templates\inventory\all_stock_movements.html:25
+#: .\templates\inventory\stock_history.html:28
+msgid "Change"
+msgstr "Değişim"
+
+#: .\templates\inventory\all_stock_movements.html:26
+#: .\templates\inventory\stock_history.html:29
+msgid "Old Stock"
+msgstr "Eski Stok"
+
+#: .\templates\inventory\all_stock_movements.html:27
+#: .\templates\inventory\stock_history.html:30
+msgid "New Stock"
+msgstr "Yeni Stok"
+
+#: .\templates\inventory\all_stock_movements.html:28
+#: .\templates\inventory\stock_history.html:31
+msgid "Note"
+msgstr "Not"
+
+#: .\templates\inventory\all_stock_movements.html:49
+msgid "No stock movements yet."
+msgstr "Henüz stok hareketi bulunmamaktadır."
+
+#: .\templates\inventory\dashboard.html:16
+msgid "Total Product Types"
+msgstr "Toplam Ürün Çeşidi"
+
+#: .\templates\inventory\dashboard.html:33
+msgid "Total Stock Quantity"
+msgstr "Toplam Stok Miktarı"
+
+#: .\templates\inventory\dashboard.html:49
+msgid "Product Summary"
+msgstr "Ürün Özeti"
+
+#: .\templates\inventory\dashboard.html:56
+msgid "Product Name"
+msgstr "Ürün Adı"
+
+#: .\templates\inventory\dashboard.html:57
+#: .\templates\inventory\product_list.html:104
+msgid "Stock Status"
+msgstr "Stok Durumu"
+
+#: .\templates\inventory\dashboard.html:68
+msgid "No products added yet."
+msgstr "Henüz ürün eklenmemiş."
+
+#: .\templates\inventory\product_confirm_delete.html:5
+msgid "Delete Product"
+msgstr "Ürünü Sil"
+
+#: .\templates\inventory\product_confirm_delete.html:11
+msgid "Confirmation Required"
+msgstr "Onay Bekleniyor"
+
+#: .\templates\inventory\product_confirm_delete.html:14
+#, python-format
+msgid "Are you sure? You are about to delete \"<strong>%(name)s</strong>\". This action cannot be undone."
+msgstr "Emin misiniz? \"<strong>%(name)s</strong>\" adlı ürünü silmek üzeresiniz. Bu işlem geri alınamaz."
+
+#: .\templates\inventory\product_confirm_delete.html:17
+msgid "Yes, Delete"
+msgstr "Evet, Sil"
+
+#: .\templates\inventory\product_confirm_delete.html:18
+msgid "No, Cancel"
+msgstr "Hayır, İptal"
+
+#: .\templates\inventory\product_form.html:6
+msgid "Update Product"
+msgstr "Ürün Güncelle"
+
+#: .\templates\inventory\product_form.html:6
+#: .\templates\inventory\product_list.html:18
+msgid "Add New Product"
+msgstr "Yeni Ürün Ekle"
+
+#: .\templates\inventory\product_form.html:13
+msgid "Product Details"
+msgstr "Ürün Bilgileri"
+
+#: .\templates\inventory\product_form.html:19
+msgid "Save"
+msgstr "Kaydet"
+
+#: .\templates\inventory\product_list.html:28
+msgid "Search by product name..."
+msgstr "Ürün adına göre ara..."
+
+#: .\templates\inventory\product_list.html:31
+msgid "Search"
+msgstr "Ara"
+
+#: .\templates\inventory\product_list.html:35
+msgid "Clear All"
+msgstr "Tümünü Temizle"
+
+#: .\templates\inventory\product_list.html:47
+msgid "Active Filters"
+msgstr "Aktif Filtreler"
+
+#: .\templates\inventory\product_list.html:63
+msgid "Filter"
+msgstr "Filtrele"
+
+#: .\templates\inventory\product_list.html:67
+#: .\templates\inventory\product_list.html:139
+msgid "Category"
+msgstr "Kategori"
+
+#: .\templates\inventory\product_list.html:69
+msgid "All Categories"
+msgstr "Tüm Kategoriler"
+
+#: .\templates\inventory\product_list.html:78
+#: .\templates\inventory\product_list.html:141
+msgid "Supplier"
+msgstr "Tedarikçi"
+
+#: .\templates\inventory\product_list.html:80
+msgid "All Suppliers"
+msgstr "Tüm Tedarikçiler"
+
+#: .\templates\inventory\product_list.html:89
+msgid "Price Range"
+msgstr "Fiyat Aralığı"
+
+#: .\templates\inventory\product_list.html:109
+msgid "Show only low stock"
+msgstr "Sadece düşük stokları göster"
+
+#: .\templates\inventory\product_list.html:115
+msgid "Apply Filters"
+msgstr "Filtreleri Uygula"
+
+#: .\templates\inventory\product_list.html:118
+msgid "Clear Filters"
+msgstr "Filtreleri Temizle"
+
+#: .\templates\inventory\product_list.html:138
+msgid "Name"
+msgstr "Ürün Adı"
+
+#: .\templates\inventory\product_list.html:140
+msgid "Price"
+msgstr "Fiyat"
+
+#: .\templates\inventory\product_list.html:142
+msgid "Stock"
+msgstr "Stok"
+
+#: .\templates\inventory\product_list.html:143
+msgid "Actions"
+msgstr "İşlemler"
+
+#: .\templates\inventory\product_list.html:152
+msgid "Low Stock"
+msgstr "Düşük Stok"
+
+#: .\templates\inventory\product_list.html:162
+msgid "Increase Stock"
+msgstr "Stok Artır"
+
+#: .\templates\inventory\product_list.html:168
+msgid "Decrease Stock"
+msgstr "Stok Azalt"
+
+#: .\templates\inventory\product_list.html:172
+#: .\templates\inventory\stock_history.html:11
+msgid "Stock History"
+msgstr "Stok Geçmişi"
+
+#: .\templates\inventory\product_list.html:175
+msgid "Delete"
+msgstr "Sil"
+
+#: .\templates\inventory\product_list.html:184
+msgid "No products found matching your filters."
+msgstr "Filtrelere uyan ürün bulunamadı."
+
+#: .\templates\inventory\stock_history.html:13
+msgid "Back to Products"
+msgstr "Ürün Listesine Dön"
+
+#: .\templates\inventory\stock_history.html:19
+msgid "Movements"
+msgstr "Hareketler"
+
+#: .\templates\inventory\stock_history.html:20
+msgid "Current Stock"
+msgstr "Güncel Stok"
+
+#: .\templates\inventory\stock_history.html:51
+msgid "No stock movements found for this product."
+msgstr "Bu ürüne ait stok hareketi bulunamadı."
+
+#: .\templates\registration\login.html:9 .\templates\registration\login.html:42
+msgid "Login"
+msgstr "Giriş Yap"
+
+#: .\templates\registration\login.html:24
+msgid "Welcome!"
+msgstr "Hoş Geldiniz!"
+
+#: .\templates\registration\login.html:30
+msgid "Invalid username or password."
+msgstr "Kullanıcı adı veya şifre hatalı."
+
+#: .\templates\registration\login.html:35
+msgid "Username"
+msgstr "Kullanıcı Adı"
+
+#: .\templates\registration\login.html:39
+msgid "Password"
+msgstr "Şifre"
+
+#: .\templates\registration\login.html:47
+msgid "Create an Account!"
+msgstr "Hesap Oluştur!"
+
+#: .\templates\registration\register.html:9
+#: .\templates\registration\register.html:48
+msgid "Register"
+msgstr "Kayıt Ol"
+
+#: .\templates\registration\register.html:24
+msgid "Create Account"
+msgstr "Hesap Oluştur"
+
+#: .\templates\registration\register.html:53
+msgid "Already have an account? Login!"
+msgstr "Zaten hesabınız var mı? Giriş Yapın!"

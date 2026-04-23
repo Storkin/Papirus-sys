@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python manage.py makemigrations)",
+      "Bash(python manage.py migrate)",
+      "Bash(python -c \"import django; print\\(django.__version__\\)\")",
+      "Bash(pip install *)",
+      "Bash(python manage.py check)",
+      "Bash(python seed.py)",
+      "Bash(python manage.py makemessages -l tr)",
+      "Bash(python manage.py makemessages -l en)",
+      "Bash(msgfmt --version)",
+      "Bash(where msguniq *)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/gettext-iconv/bin\")"
+    ]
+  }
+}

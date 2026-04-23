@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block extra_css %}
+<link href="{% static 'vendor/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+<style>
+    .filter-panel { background: #fff; border-radius: 8px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .filter-panel h6 { font-weight: 700; color: #4e73df; border-bottom: 1px solid #e3e6f0; padding-bottom: 8px; margin-bottom: 12px; }
+    .badge-filter { font-size: 0.85rem; padding: 6px 10px; margin-right: 5px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">{% trans "Product Management" %}</h1>
+    <a href="{% url 'product_create' %}" class="btn btn-primary btn-sm">
+        <i class="fas fa-plus fa-sm text-white-50"></i> {% trans "Add New Product" %}
+    </a>
+</div>
+
+<!-- Search Bar -->
+<div class="card shadow mb-3">
+    <div class="card-body py-3">
+        <form method="GET" action="">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control form-control-lg"
+                       placeholder="{% trans 'Search by product name...' %}" value="{{ q }}">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-search"></i> {% trans "Search" %}
+                    </button>
+                    {% if active_filters %}
+                    <a href="{% url 'product_list' %}" class="btn btn-secondary">
+                        <i class="fas fa-times"></i> {% trans "Clear All" %}
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Active Filter Badges -->
+{% if active_filters %}
+<div class="mb-3">
+    <span class="text-muted small mr-2">{% trans "Active Filters" %}:</span>
+    {% for key, value in active_filters.items %}
+    <span class="badge badge-primary badge-filter">{{ key }}: {{ value }}</span>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="row">
+    <!-- Filter Panel -->
+    <div class="col-lg-3 mb-4">
+        <div class="filter-panel">
+            <form method="GET" action="" id="filterForm">
+                {% if q %}
+                <input type="hidden" name="q" value="{{ q }}">
+                {% endif %}
+
+                <h6><i class="fas fa-filter mr-1"></i> {% trans "Filter" %}</h6>
+
+                <!-- Category -->
+                <div class="mb-3">
+                    <label class="font-weight-bold small text-uppercase text-muted">{% trans "Category" %}</label>
+                    <select name="category" class="form-control form-control-sm">
+                        <option value="">{% trans "All Categories" %}</option>
+                        {% for cat in categories %}
+                        <option value="{{ cat }}" {% if selected_category == cat %}selected{% endif %}>{{ cat }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Supplier -->
+                <div class="mb-3">
+                    <label class="font-weight-bold small text-uppercase text-muted">{% trans "Supplier" %}</label>
+                    <select name="supplier" class="form-control form-control-sm">
+                        <option value="">{% trans "All Suppliers" %}</option>
+                        {% for sup in suppliers %}
+                        <option value="{{ sup }}" {% if selected_supplier == sup %}selected{% endif %}>{{ sup }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Price Range -->
+                <div class="mb-3">
+                    <label class="font-weight-bold small text-uppercase text-muted">{% trans "Price Range" %} (₺)</label>
+                    <div class="input-group input-group-sm mb-1">
+                        <div class="input-group-prepend"><span class="input-group-text">Min</span></div>
+                        <input type="number" name="min_price" class="form-control"
+                               placeholder="0" value="{{ min_price }}" min="0" step="0.01">
+                    </div>
+                    <div class="input-group input-group-sm">
+                        <div class="input-group-prepend"><span class="input-group-text">Max</span></div>
+                        <input type="number" name="max_price" class="form-control"
+                               placeholder="9999" value="{{ max_price }}" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <!-- Low Stock -->
+                <div class="mb-4">
+                    <label class="font-weight-bold small text-uppercase text-muted">{% trans "Stock Status" %}</label>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="lowStock"
+                               name="low_stock" value="1" {% if low_stock %}checked{% endif %}>
+                        <label class="custom-control-label" for="lowStock">
+                            {% trans "Show only low stock" %}
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block btn-sm">
+                    <i class="fas fa-filter mr-1"></i> {% trans "Apply Filters" %}
+                </button>
+                <a href="{% url 'product_list' %}" class="btn btn-outline-secondary btn-block btn-sm mt-2">
+                    <i class="fas fa-times mr-1"></i> {% trans "Clear Filters" %}
+                </a>
+            </form>
+        </div>
+    </div>
+
+    <!-- Product Table -->
+    <div class="col-lg-9">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">
+                    {% trans "Products" %}
+                    <span class="badge badge-secondary ml-2">{{ products|length }}</span>
+                </h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>{% trans "Name" %}</th>
+                                <th>{% trans "Category" %}</th>
+                                <th>{% trans "Price" %}</th>
+                                <th>{% trans "Supplier" %}</th>
+                                <th>{% trans "Stock" %}</th>
+                                <th class="text-right">{% trans "Actions" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for product in products %}
+                            <tr {% if product.is_low_stock %}class="table-warning"{% endif %}>
+                                <td class="align-middle">
+                                    {{ product.name }}
+                                    {% if product.is_low_stock %}
+                                    <span class="badge badge-danger ml-1">{% trans "Low Stock" %}</span>
+                                    {% endif %}
+                                </td>
+                                <td class="align-middle">{{ product.category }}</td>
+                                <td class="align-middle">{{ product.price }} ₺</td>
+                                <td class="align-middle">{{ product.supplier }}</td>
+                                <td class="align-middle"><strong>{{ product.stock_quantity }}</strong> {{ product.unit }}</td>
+                                <td class="text-right align-middle">
+                                    <form action="{% url 'product_increase_stock' product.pk %}" method="post" style="display:inline;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-success btn-circle btn-sm" title="{% trans 'Increase Stock' %}">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </form>
+                                    <form action="{% url 'product_decrease_stock' product.pk %}" method="post" style="display:inline;">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-warning btn-circle btn-sm" title="{% trans 'Decrease Stock' %}">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                    </form>
+                                    <a href="{% url 'stock_history' product.pk %}" class="btn btn-info btn-circle btn-sm" title="{% trans 'Stock History' %}">
+                                        <i class="fas fa-history"></i>
+                                    </a>
+                                    <a href="{% url 'product_delete' product.pk %}" class="btn btn-danger btn-circle btn-sm" title="{% trans 'Delete' %}">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="6" class="text-center text-muted py-4">
+                                    <i class="fas fa-search fa-2x mb-2 d-block"></i>
+                                    {% trans "No products found matching your filters." %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'vendor/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+{% endblock %}
