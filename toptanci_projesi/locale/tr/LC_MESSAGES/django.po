@@ -2,13 +2,88 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Papirus SYS\n"
-"POT-Creation-Date: 2026-04-23 18:03+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-23 21:48+0300\n"
 "PO-Revision-Date: 2026-04-23 18:03+0300\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\inventory\models.py:6 .\templates\inventory\dashboard.html:56
+msgid "Product Name"
+msgstr "Ürün Adı"
+
+#: .\inventory\models.py:7 .\templates\inventory\product_list.html:67
+#: .\templates\inventory\product_list.html:139
+msgid "Category"
+msgstr "Kategori"
+
+#: .\inventory\models.py:8 .\templates\inventory\product_list.html:140
+msgid "Price"
+msgstr "Fiyat"
+
+#: .\inventory\models.py:9
+msgid "Manufacturer"
+msgstr "Üretici"
+
+#: .\inventory\models.py:10
+msgid "Stock Quantity"
+msgstr "Stok Miktarı"
+
+#: .\inventory\models.py:11
+msgid "Unit"
+msgstr "Birim"
+
+#: .\inventory\models.py:12
+msgid "Barcode"
+msgstr "Barkod"
+
+#: .\inventory\models.py:13
+msgid "Tax Rate (%)"
+msgstr "KDV Oranı (%)"
+
+#: .\inventory\models.py:14 .\templates\inventory\product_list.html:78
+#: .\templates\inventory\product_list.html:141
+msgid "Supplier"
+msgstr "Tedarikçi"
+
+#: .\inventory\models.py:15
+msgid "Shelf Location"
+msgstr "Raf Konumu"
+
+#: .\inventory\models.py:16
+msgid "Minimum Stock"
+msgstr "Minimum Stok"
+
+#: .\inventory\models.py:26 .\templates\inventory\all_stock_movements.html:24
+msgid "Product"
+msgstr "Ürün"
+
+#: .\inventory\models.py:27
+msgid "Change Amount"
+msgstr "Değişim Miktarı"
+
+#: .\inventory\models.py:28 .\templates\inventory\all_stock_movements.html:26
+#: .\templates\inventory\stock_history.html:29
+msgid "Old Stock"
+msgstr "Eski Stok"
+
+#: .\inventory\models.py:29 .\templates\inventory\all_stock_movements.html:27
+#: .\templates\inventory\stock_history.html:30
+msgid "New Stock"
+msgstr "Yeni Stok"
+
+#: .\inventory\models.py:30 .\templates\inventory\all_stock_movements.html:23
+#: .\templates\inventory\stock_history.html:27
+msgid "Date"
+msgstr "Tarih"
+
+#: .\inventory\models.py:31 .\templates\inventory\all_stock_movements.html:28
+#: .\templates\inventory\stock_history.html:31
+msgid "Note"
+msgstr "Not"
 
 #: .\templates\base.html:32 .\templates\inventory\dashboard.html:6
 msgid "Dashboard"
@@ -36,7 +111,8 @@ msgstr "Çıkış Yapılacak?"
 
 #: .\templates\base.html:129
 msgid "Select the logout button below to end your current session."
-msgstr "Geçerli oturumu sonlandırmak için aşağıdaki \"Çıkış Yap\" butonunu seçin."
+msgstr ""
+"Geçerli oturumu sonlandırmak için aşağıdaki \"Çıkış Yap\" butonunu seçin."
 
 #: .\templates\base.html:133 .\templates\inventory\product_form.html:20
 msgid "Cancel"
@@ -50,34 +126,10 @@ msgstr "Tüm Stok Hareketleri"
 msgid "Movement Log"
 msgstr "Hareket Defteri"
 
-#: .\templates\inventory\all_stock_movements.html:23
-#: .\templates\inventory\stock_history.html:27
-msgid "Date"
-msgstr "Tarih"
-
-#: .\templates\inventory\all_stock_movements.html:24
-msgid "Product"
-msgstr "Ürün"
-
 #: .\templates\inventory\all_stock_movements.html:25
 #: .\templates\inventory\stock_history.html:28
 msgid "Change"
 msgstr "Değişim"
-
-#: .\templates\inventory\all_stock_movements.html:26
-#: .\templates\inventory\stock_history.html:29
-msgid "Old Stock"
-msgstr "Eski Stok"
-
-#: .\templates\inventory\all_stock_movements.html:27
-#: .\templates\inventory\stock_history.html:30
-msgid "New Stock"
-msgstr "Yeni Stok"
-
-#: .\templates\inventory\all_stock_movements.html:28
-#: .\templates\inventory\stock_history.html:31
-msgid "Note"
-msgstr "Not"
 
 #: .\templates\inventory\all_stock_movements.html:49
 msgid "No stock movements yet."
@@ -94,10 +146,6 @@ msgstr "Toplam Stok Miktarı"
 #: .\templates\inventory\dashboard.html:49
 msgid "Product Summary"
 msgstr "Ürün Özeti"
-
-#: .\templates\inventory\dashboard.html:56
-msgid "Product Name"
-msgstr "Ürün Adı"
 
 #: .\templates\inventory\dashboard.html:57
 #: .\templates\inventory\product_list.html:104
@@ -118,8 +166,12 @@ msgstr "Onay Bekleniyor"
 
 #: .\templates\inventory\product_confirm_delete.html:14
 #, python-format
-msgid "Are you sure? You are about to delete \"<strong>%(name)s</strong>\". This action cannot be undone."
-msgstr "Emin misiniz? \"<strong>%(name)s</strong>\" adlı ürünü silmek üzeresiniz. Bu işlem geri alınamaz."
+msgid ""
+"Are you sure? You are about to delete \"<strong>%(name)s</strong>\". This "
+"action cannot be undone."
+msgstr ""
+"Emin misiniz? \"<strong>%(name)s</strong>\" adlı ürünü silmek üzeresiniz. Bu "
+"işlem geri alınamaz."
 
 #: .\templates\inventory\product_confirm_delete.html:17
 msgid "Yes, Delete"
@@ -166,19 +218,9 @@ msgstr "Aktif Filtreler"
 msgid "Filter"
 msgstr "Filtrele"
 
-#: .\templates\inventory\product_list.html:67
-#: .\templates\inventory\product_list.html:139
-msgid "Category"
-msgstr "Kategori"
-
 #: .\templates\inventory\product_list.html:69
 msgid "All Categories"
 msgstr "Tüm Kategoriler"
-
-#: .\templates\inventory\product_list.html:78
-#: .\templates\inventory\product_list.html:141
-msgid "Supplier"
-msgstr "Tedarikçi"
 
 #: .\templates\inventory\product_list.html:80
 msgid "All Suppliers"
@@ -204,10 +246,6 @@ msgstr "Filtreleri Temizle"
 msgid "Name"
 msgstr "Ürün Adı"
 
-#: .\templates\inventory\product_list.html:140
-msgid "Price"
-msgstr "Fiyat"
-
 #: .\templates\inventory\product_list.html:142
 msgid "Stock"
 msgstr "Stok"
@@ -227,6 +265,18 @@ msgstr "Stok Artır"
 #: .\templates\inventory\product_list.html:168
 msgid "Decrease Stock"
 msgstr "Stok Azalt"
+
+msgid "Amount to Add"
+msgstr "Eklenecek Miktar"
+
+msgid "Amount to Remove"
+msgstr "Çıkarılacak Miktar"
+
+msgid "Add"
+msgstr "Ekle"
+
+msgid "Remove"
+msgstr "Çıkar"
 
 #: .\templates\inventory\product_list.html:172
 #: .\templates\inventory\stock_history.html:11
@@ -293,3 +343,18 @@ msgstr "Hesap Oluştur"
 #: .\templates\registration\register.html:53
 msgid "Already have an account? Login!"
 msgstr "Zaten hesabınız var mı? Giriş Yapın!"
+
+msgid "Sort"
+msgstr "Sırala"
+
+msgid "Name (A-Z)"
+msgstr "İsim (A-Z)"
+
+msgid "Stock (Low → High)"
+msgstr "Stok (Az → Çok)"
+
+msgid "Stock (High → Low)"
+msgstr "Stok (Çok → Az)"
+
+msgid "Last Movement"
+msgstr "Son Hareket"

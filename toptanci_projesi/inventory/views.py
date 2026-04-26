@@ -6,6 +6,7 @@ from .models import Product, StockMovement
 from .forms import ProductForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.db.models import Subquery, OuterRef
 
 
 def register_view(request):
@@ -45,6 +46,7 @@ def product_list(request):
     min_price = request.GET.get('min_price', '')
     max_price = request.GET.get('max_price', '')
     low_stock = request.GET.get('low_stock', '')
+    sort = request.GET.get('sort', 'name')
 
     if q:
         products = products.filter(name__icontains=q)
@@ -56,6 +58,22 @@ def product_list(request):
         products = products.filter(price__gte=float(min_price))
     if max_price:
         products = products.filter(price__lte=float(max_price))
+
+    # Apply sorting before low_stock (which converts queryset to list)
+    if sort == 'stock_asc':
+        products = products.order_by('stock_quantity', 'name')
+    elif sort == 'stock_desc':
+        products = products.order_by('-stock_quantity', 'name')
+    elif sort == 'category':
+        products = products.order_by('category', 'name')
+    elif sort == 'last_movement':
+        latest_movement = StockMovement.objects.filter(
+            product=OuterRef('pk')
+        ).order_by('-date').values('date')[:1]
+        products = products.annotate(last_move=Subquery(latest_movement)).order_by('-last_move', 'name')
+    else:  # default: name
+        products = products.order_by('name')
+
     if low_stock:
         products = [p for p in products if p.is_low_stock()]
 
@@ -71,6 +89,11 @@ def product_list(request):
     if max_price: active_filters['Max Fiyat'] = f"{max_price} ₺"
     if low_stock: active_filters['Stok'] = 'Düşük Stok'
 
+    # Build query string without 'sort' param (used in template sort links)
+    get_params = request.GET.copy()
+    get_params.pop('sort', None)
+    sort_params = get_params.urlencode()
+
     context = {
         'products': products,
         'categories': categories,
@@ -82,6 +105,8 @@ def product_list(request):
         'min_price': min_price,
         'max_price': max_price,
         'low_stock': low_stock,
+        'current_sort': sort,
+        'sort_params': sort_params,
     }
     return render(request, 'inventory/product_list.html', context)
     
@@ -110,11 +135,17 @@ def product_delete(request, pk):
 @login_required
 def product_increase_stock(request, pk):
     product = get_object_or_404(Product, pk=pk)
+    try:
+        amount = int(request.POST.get('amount', 1))
+        if amount < 1:
+            amount = 1
+    except (ValueError, TypeError):
+        amount = 1
     old = product.stock_quantity
-    product.stock_quantity += 1
+    product.stock_quantity += amount
     product.save()
     StockMovement.objects.create(
-        product=product, change_amount=1,
+        product=product, change_amount=amount,
         old_stock=old, new_stock=product.stock_quantity, note="Stock Increase"
     )
     return HttpResponseRedirect(reverse('product_list'))
@@ -123,12 +154,18 @@ def product_increase_stock(request, pk):
 @login_required
 def product_decrease_stock(request, pk):
     product = get_object_or_404(Product, pk=pk)
-    if product.stock_quantity > 0:
+    try:
+        amount = int(request.POST.get('amount', 1))
+        if amount < 1:
+            amount = 1
+    except (ValueError, TypeError):
+        amount = 1
+    if product.stock_quantity >= amount:
         old = product.stock_quantity
-        product.stock_quantity -= 1
+        product.stock_quantity -= amount
         product.save()
         StockMovement.objects.create(
-            product=product, change_amount=-1,
+            product=product, change_amount=-amount,
             old_stock=old, new_stock=product.stock_quantity, note="Stock Decrease"
         )
     return HttpResponseRedirect(reverse('product_list'))

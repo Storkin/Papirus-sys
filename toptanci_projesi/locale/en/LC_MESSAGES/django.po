@@ -1,127 +1,167 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# English translations for Papirus SYS
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Papirus SYS\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-23 18:03+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2026-04-23 21:48+0300\n"
+"PO-Revision-Date: 2026-04-23 18:03+0300\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\inventory\models.py:6 .\templates\inventory\dashboard.html:56
+msgid "Product Name"
+msgstr "Product Name"
+
+#: .\inventory\models.py:7 .\templates\inventory\product_list.html:67
+#: .\templates\inventory\product_list.html:139
+msgid "Category"
+msgstr "Category"
+
+#: .\inventory\models.py:8 .\templates\inventory\product_list.html:140
+msgid "Price"
+msgstr "Price"
+
+#: .\inventory\models.py:9
+msgid "Manufacturer"
+msgstr "Manufacturer"
+
+#: .\inventory\models.py:10
+msgid "Stock Quantity"
+msgstr "Stock Quantity"
+
+#: .\inventory\models.py:11
+msgid "Unit"
+msgstr "Unit"
+
+#: .\inventory\models.py:12
+msgid "Barcode"
+msgstr "Barcode"
+
+#: .\inventory\models.py:13
+msgid "Tax Rate (%)"
+msgstr "Tax Rate (%)"
+
+#: .\inventory\models.py:14 .\templates\inventory\product_list.html:78
+#: .\templates\inventory\product_list.html:141
+msgid "Supplier"
+msgstr "Supplier"
+
+#: .\inventory\models.py:15
+msgid "Shelf Location"
+msgstr "Shelf Location"
+
+#: .\inventory\models.py:16
+msgid "Minimum Stock"
+msgstr "Minimum Stock"
+
+#: .\inventory\models.py:26 .\templates\inventory\all_stock_movements.html:24
+msgid "Product"
+msgstr "Product"
+
+#: .\inventory\models.py:27
+msgid "Change Amount"
+msgstr "Change Amount"
+
+#: .\inventory\models.py:28 .\templates\inventory\all_stock_movements.html:26
+#: .\templates\inventory\stock_history.html:29
+msgid "Old Stock"
+msgstr "Old Stock"
+
+#: .\inventory\models.py:29 .\templates\inventory\all_stock_movements.html:27
+#: .\templates\inventory\stock_history.html:30
+msgid "New Stock"
+msgstr "New Stock"
+
+#: .\inventory\models.py:30 .\templates\inventory\all_stock_movements.html:23
+#: .\templates\inventory\stock_history.html:27
+msgid "Date"
+msgstr "Date"
+
+#: .\inventory\models.py:31 .\templates\inventory\all_stock_movements.html:28
+#: .\templates\inventory\stock_history.html:31
+msgid "Note"
+msgstr "Note"
+
 #: .\templates\base.html:32 .\templates\inventory\dashboard.html:6
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #: .\templates\base.html:36 .\templates\inventory\product_list.html:129
 msgid "Products"
-msgstr ""
+msgstr "Products"
 
 #: .\templates\base.html:40 .\templates\inventory\product_list.html:16
 msgid "Product Management"
-msgstr ""
+msgstr "Product Management"
 
 #: .\templates\base.html:46
 msgid "Stock Movements"
-msgstr ""
+msgstr "Stock Movements"
 
 #: .\templates\base.html:93 .\templates\base.html:134
 msgid "Logout"
-msgstr ""
+msgstr "Logout"
 
 #: .\templates\base.html:124
 msgid "Confirm Logout"
-msgstr ""
+msgstr "Confirm Logout"
 
 #: .\templates\base.html:129
 msgid "Select the logout button below to end your current session."
-msgstr ""
+msgstr "Select the logout button below to end your current session."
 
 #: .\templates\base.html:133 .\templates\inventory\product_form.html:20
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel"
 
 #: .\templates\inventory\all_stock_movements.html:11
 msgid "All Stock Movements"
-msgstr ""
+msgstr "All Stock Movements"
 
 #: .\templates\inventory\all_stock_movements.html:16
 msgid "Movement Log"
-msgstr ""
-
-#: .\templates\inventory\all_stock_movements.html:23
-#: .\templates\inventory\stock_history.html:27
-msgid "Date"
-msgstr ""
-
-#: .\templates\inventory\all_stock_movements.html:24
-msgid "Product"
-msgstr ""
+msgstr "Movement Log"
 
 #: .\templates\inventory\all_stock_movements.html:25
 #: .\templates\inventory\stock_history.html:28
 msgid "Change"
-msgstr ""
-
-#: .\templates\inventory\all_stock_movements.html:26
-#: .\templates\inventory\stock_history.html:29
-msgid "Old Stock"
-msgstr ""
-
-#: .\templates\inventory\all_stock_movements.html:27
-#: .\templates\inventory\stock_history.html:30
-msgid "New Stock"
-msgstr ""
-
-#: .\templates\inventory\all_stock_movements.html:28
-#: .\templates\inventory\stock_history.html:31
-msgid "Note"
-msgstr ""
+msgstr "Change"
 
 #: .\templates\inventory\all_stock_movements.html:49
 msgid "No stock movements yet."
-msgstr ""
+msgstr "No stock movements yet."
 
 #: .\templates\inventory\dashboard.html:16
 msgid "Total Product Types"
-msgstr ""
+msgstr "Total Product Types"
 
 #: .\templates\inventory\dashboard.html:33
 msgid "Total Stock Quantity"
-msgstr ""
+msgstr "Total Stock Quantity"
 
 #: .\templates\inventory\dashboard.html:49
 msgid "Product Summary"
-msgstr ""
-
-#: .\templates\inventory\dashboard.html:56
-msgid "Product Name"
-msgstr ""
+msgstr "Product Summary"
 
 #: .\templates\inventory\dashboard.html:57
 #: .\templates\inventory\product_list.html:104
 msgid "Stock Status"
-msgstr ""
+msgstr "Stock Status"
 
 #: .\templates\inventory\dashboard.html:68
 msgid "No products added yet."
-msgstr ""
+msgstr "No products added yet."
 
 #: .\templates\inventory\product_confirm_delete.html:5
 msgid "Delete Product"
-msgstr ""
+msgstr "Delete Product"
 
 #: .\templates\inventory\product_confirm_delete.html:11
 msgid "Confirmation Required"
-msgstr ""
+msgstr "Confirmation Required"
 
 #: .\templates\inventory\product_confirm_delete.html:14
 #, python-format
@@ -129,176 +169,191 @@ msgid ""
 "Are you sure? You are about to delete \"<strong>%(name)s</strong>\". This "
 "action cannot be undone."
 msgstr ""
+"Are you sure? You are about to delete \"<strong>%(name)s</strong>\". This "
+"action cannot be undone."
 
 #: .\templates\inventory\product_confirm_delete.html:17
 msgid "Yes, Delete"
-msgstr ""
+msgstr "Yes, Delete"
 
 #: .\templates\inventory\product_confirm_delete.html:18
 msgid "No, Cancel"
-msgstr ""
+msgstr "No, Cancel"
 
 #: .\templates\inventory\product_form.html:6
 msgid "Update Product"
-msgstr ""
+msgstr "Update Product"
 
 #: .\templates\inventory\product_form.html:6
 #: .\templates\inventory\product_list.html:18
 msgid "Add New Product"
-msgstr ""
+msgstr "Add New Product"
 
 #: .\templates\inventory\product_form.html:13
 msgid "Product Details"
-msgstr ""
+msgstr "Product Details"
 
 #: .\templates\inventory\product_form.html:19
 msgid "Save"
-msgstr ""
+msgstr "Save"
 
 #: .\templates\inventory\product_list.html:28
 msgid "Search by product name..."
-msgstr ""
+msgstr "Search by product name..."
 
 #: .\templates\inventory\product_list.html:31
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 #: .\templates\inventory\product_list.html:35
 msgid "Clear All"
-msgstr ""
+msgstr "Clear All"
 
 #: .\templates\inventory\product_list.html:47
 msgid "Active Filters"
-msgstr ""
+msgstr "Active Filters"
 
 #: .\templates\inventory\product_list.html:63
 msgid "Filter"
-msgstr ""
-
-#: .\templates\inventory\product_list.html:67
-#: .\templates\inventory\product_list.html:139
-msgid "Category"
-msgstr ""
+msgstr "Filter"
 
 #: .\templates\inventory\product_list.html:69
 msgid "All Categories"
-msgstr ""
-
-#: .\templates\inventory\product_list.html:78
-#: .\templates\inventory\product_list.html:141
-msgid "Supplier"
-msgstr ""
+msgstr "All Categories"
 
 #: .\templates\inventory\product_list.html:80
 msgid "All Suppliers"
-msgstr ""
+msgstr "All Suppliers"
 
 #: .\templates\inventory\product_list.html:89
 msgid "Price Range"
-msgstr ""
+msgstr "Price Range"
 
 #: .\templates\inventory\product_list.html:109
 msgid "Show only low stock"
-msgstr ""
+msgstr "Show only low stock"
 
 #: .\templates\inventory\product_list.html:115
 msgid "Apply Filters"
-msgstr ""
+msgstr "Apply Filters"
 
 #: .\templates\inventory\product_list.html:118
 msgid "Clear Filters"
-msgstr ""
+msgstr "Clear Filters"
 
 #: .\templates\inventory\product_list.html:138
 msgid "Name"
-msgstr ""
-
-#: .\templates\inventory\product_list.html:140
-msgid "Price"
-msgstr ""
+msgstr "Name"
 
 #: .\templates\inventory\product_list.html:142
 msgid "Stock"
-msgstr ""
+msgstr "Stock"
 
 #: .\templates\inventory\product_list.html:143
 msgid "Actions"
-msgstr ""
+msgstr "Actions"
 
 #: .\templates\inventory\product_list.html:152
 msgid "Low Stock"
-msgstr ""
+msgstr "Low Stock"
 
 #: .\templates\inventory\product_list.html:162
 msgid "Increase Stock"
-msgstr ""
+msgstr "Increase Stock"
 
 #: .\templates\inventory\product_list.html:168
 msgid "Decrease Stock"
-msgstr ""
+msgstr "Decrease Stock"
+
+msgid "Amount to Add"
+msgstr "Amount to Add"
+
+msgid "Amount to Remove"
+msgstr "Amount to Remove"
+
+msgid "Add"
+msgstr "Add"
+
+msgid "Remove"
+msgstr "Remove"
 
 #: .\templates\inventory\product_list.html:172
 #: .\templates\inventory\stock_history.html:11
 msgid "Stock History"
-msgstr ""
+msgstr "Stock History"
 
 #: .\templates\inventory\product_list.html:175
 msgid "Delete"
-msgstr ""
+msgstr "Delete"
 
 #: .\templates\inventory\product_list.html:184
 msgid "No products found matching your filters."
-msgstr ""
+msgstr "No products found matching your filters."
 
 #: .\templates\inventory\stock_history.html:13
 msgid "Back to Products"
-msgstr ""
+msgstr "Back to Products"
 
 #: .\templates\inventory\stock_history.html:19
 msgid "Movements"
-msgstr ""
+msgstr "Movements"
 
 #: .\templates\inventory\stock_history.html:20
 msgid "Current Stock"
-msgstr ""
+msgstr "Current Stock"
 
 #: .\templates\inventory\stock_history.html:51
 msgid "No stock movements found for this product."
-msgstr ""
+msgstr "No stock movements found for this product."
 
 #: .\templates\registration\login.html:9 .\templates\registration\login.html:42
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: .\templates\registration\login.html:24
 msgid "Welcome!"
-msgstr ""
+msgstr "Welcome!"
 
 #: .\templates\registration\login.html:30
 msgid "Invalid username or password."
-msgstr ""
+msgstr "Invalid username or password."
 
 #: .\templates\registration\login.html:35
 msgid "Username"
-msgstr ""
+msgstr "Username"
 
 #: .\templates\registration\login.html:39
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #: .\templates\registration\login.html:47
 msgid "Create an Account!"
-msgstr ""
+msgstr "Create an Account!"
 
 #: .\templates\registration\register.html:9
 #: .\templates\registration\register.html:48
 msgid "Register"
-msgstr ""
+msgstr "Register"
 
 #: .\templates\registration\register.html:24
 msgid "Create Account"
-msgstr ""
+msgstr "Create Account"
 
 #: .\templates\registration\register.html:53
 msgid "Already have an account? Login!"
-msgstr ""
+msgstr "Already have an account? Login!"
+
+msgid "Sort"
+msgstr "Sort"
+
+msgid "Name (A-Z)"
+msgstr "Name (A-Z)"
+
+msgid "Stock (Low → High)"
+msgstr "Stock (Low → High)"
+
+msgid "Stock (High → Low)"
+msgstr "Stock (High → Low)"
+
+msgid "Last Movement"
+msgstr "Last Movement"
