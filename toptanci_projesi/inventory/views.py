@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
-from .models import Product, StockMovement
-from .forms import ProductForm
+from .models import Product, StockMovement, Customer
+from .forms import ProductForm, CustomerForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.db.models import Subquery, OuterRef
@@ -182,3 +182,79 @@ def stock_history(request, pk):
 def all_stock_movements(request):
     movements = StockMovement.objects.select_related('product').order_by('-date')
     return render(request, 'inventory/all_stock_movements.html', {'movements': movements})
+
+
+# ─── Customer Views ────────────────────────────────────────────────────────────
+
+@login_required
+def customer_list(request):
+    q = request.GET.get('q', '').strip()
+    sort = request.GET.get('sort', 'name')
+    customers = Customer.objects.all()
+
+    if q:
+        customers = customers.filter(name__icontains=q)
+
+    # ORM ile sıralanabilenler
+    if sort == 'name':
+        customers = customers.order_by('name')
+    elif sort == 'shop_name':
+        customers = customers.order_by('shop_name', 'name')
+    elif sort == 'debt_asc':
+        customers = customers.order_by('debt', 'name')
+    elif sort == 'debt_desc':
+        customers = customers.order_by('-debt', 'name')
+    elif sort == 'created':
+        customers = customers.order_by('-created_at')
+    else:
+        customers = customers.order_by('name')
+
+    # debt_rating property'e göre sıralama (Python tarafında)
+    if sort == 'rating':
+        rating_order = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'F': 4}
+        customers = sorted(customers, key=lambda c: (rating_order.get(c.debt_rating, 9), c.name))
+
+    get_params = request.GET.copy()
+    get_params.pop('sort', None)
+    sort_params = get_params.urlencode()
+
+    return render(request, 'inventory/customer_list.html', {
+        'customers': customers,
+        'q': q,
+        'current_sort': sort,
+        'sort_params': sort_params,
+    })
+
+
+@login_required
+def customer_create(request):
+    if request.method == 'POST':
+        form = CustomerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('customer_list')
+    else:
+        form = CustomerForm()
+    return render(request, 'inventory/customer_form.html', {'form': form})
+
+
+@login_required
+def customer_update(request, pk):
+    customer = get_object_or_404(Customer, pk=pk)
+    if request.method == 'POST':
+        form = CustomerForm(request.POST, instance=customer)
+        if form.is_valid():
+            form.save()
+            return redirect('customer_list')
+    else:
+        form = CustomerForm(instance=customer)
+    return render(request, 'inventory/customer_form.html', {'form': form, 'customer': customer})
+
+
+@login_required
+def customer_delete(request, pk):
+    customer = get_object_or_404(Customer, pk=pk)
+    if request.method == 'POST':
+        customer.delete()
+        return redirect('customer_list')
+    return render(request, 'inventory/customer_confirm_delete.html', {'customer': customer})

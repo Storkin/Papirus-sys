@@ -357,3 +357,102 @@ msgstr "Stock (High → Low)"
 
 msgid "Last Movement"
 msgstr "Last Movement"
+
+msgid "Customers"
+msgstr "Customers"
+
+msgid "Customer Management"
+msgstr "Customer Management"
+
+msgid "Add New Customer"
+msgstr "Add New Customer"
+
+msgid "Update Customer"
+msgstr "Update Customer"
+
+msgid "Delete Customer"
+msgstr "Delete Customer"
+
+msgid "Customer Name"
+msgstr "Customer Name"
+
+msgid "Shop Name"
+msgstr "Shop Name"
+
+msgid "Debt (₺)"
+msgstr "Debt (₺)"
+
+msgid "Payment Due Date"
+msgstr "Payment Due Date"
+
+msgid "Debt Rating"
+msgstr "Debt Rating"
+
+msgid "Risk Score"
+msgstr "Risk Score"
+
+msgid "No Debt"
+msgstr "No Debt"
+
+msgid "Not Due Yet"
+msgstr "Not Due Yet"
+
+msgid "1-30 Days Late"
+msgstr "1-30 Days Late"
+
+msgid "31-90 Days Late"
+msgstr "31-90 Days Late"
+
+msgid "90+ Days Late"
+msgstr "90+ Days Late"
+
+msgid "days overdue"
+msgstr "days overdue"
+
+msgid "due today"
+msgstr "due today"
+
+msgid "days left"
+msgstr "days left"
+
+msgid "Contact Person"
+msgstr "Contact Person"
+
+msgid "Phone"
+msgstr "Phone"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Tax Number"
+msgstr "Tax Number"
+
+msgid "Address"
+msgstr "Address"
+
+msgid "Created At"
+msgstr "Created At"
+
+msgid "Customer Details"
+msgstr "Customer Details"
+
+msgid "Search by customer name..."
+msgstr "Search by customer name..."
+
+msgid "No customers found."
+msgstr "No customers found."
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Debt (High → Low)"
+msgstr "Debt (High → Low)"
+
+msgid "Debt (Low → High)"
+msgstr "Debt (Low → High)"
+
+msgid "Debt Rating (A → F)"
+msgstr "Debt Rating (A → F)"
+
+msgid "Newest First"
+msgstr "Newest First"

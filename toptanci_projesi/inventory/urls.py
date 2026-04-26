@@ -11,4 +11,8 @@ urlpatterns = [
     path('products/<int:pk>/decrease/', views.product_decrease_stock, name='product_decrease_stock'),
     path('products/<int:pk>/history/', views.stock_history, name='stock_history'),
     path('stock-movements/', views.all_stock_movements, name='all_stock_movements'),
+    path('customers/', views.customer_list, name='customer_list'),
+    path('customers/add/', views.customer_create, name='customer_create'),
+    path('customers/<int:pk>/edit/', views.customer_update, name='customer_update'),
+    path('customers/<int:pk>/delete/', views.customer_delete, name='customer_delete'),
 ]

@@ -358,3 +358,102 @@ msgstr "Stok (Çok → Az)"
 
 msgid "Last Movement"
 msgstr "Son Hareket"
+
+msgid "Customers"
+msgstr "Müşteriler"
+
+msgid "Customer Management"
+msgstr "Müşteri Yönetimi"
+
+msgid "Add New Customer"
+msgstr "Yeni Müşteri Ekle"
+
+msgid "Update Customer"
+msgstr "Müşteriyi Güncelle"
+
+msgid "Delete Customer"
+msgstr "Müşteriyi Sil"
+
+msgid "Customer Name"
+msgstr "Müşteri Adı"
+
+msgid "Shop Name"
+msgstr "Dükkan Adı"
+
+msgid "Debt (₺)"
+msgstr "Borç (₺)"
+
+msgid "Payment Due Date"
+msgstr "Son Ödeme Tarihi"
+
+msgid "Debt Rating"
+msgstr "Borç Notu"
+
+msgid "Risk Score"
+msgstr "Risk Skoru"
+
+msgid "No Debt"
+msgstr "Borçsuz"
+
+msgid "Not Due Yet"
+msgstr "Vadesi Gelmemiş"
+
+msgid "1-30 Days Late"
+msgstr "1-30 Gün Gecikme"
+
+msgid "31-90 Days Late"
+msgstr "31-90 Gün Gecikme"
+
+msgid "90+ Days Late"
+msgstr "90+ Gün Gecikme"
+
+msgid "days overdue"
+msgstr "gün gecikmiş"
+
+msgid "due today"
+msgstr "bugün son gün"
+
+msgid "days left"
+msgstr "gün kaldı"
+
+msgid "Contact Person"
+msgstr "İletişim Kişisi"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Email"
+msgstr "E-posta"
+
+msgid "Tax Number"
+msgstr "Vergi Numarası"
+
+msgid "Address"
+msgstr "Adres"
+
+msgid "Created At"
+msgstr "Kayıt Tarihi"
+
+msgid "Customer Details"
+msgstr "Müşteri Bilgileri"
+
+msgid "Search by customer name..."
+msgstr "Müşteri adına göre ara..."
+
+msgid "No customers found."
+msgstr "Hiç müşteri bulunamadı."
+
+msgid "Edit"
+msgstr "Düzenle"
+
+msgid "Debt (High → Low)"
+msgstr "Borç (Çok → Az)"
+
+msgid "Debt (Low → High)"
+msgstr "Borç (Az → Çok)"
+
+msgid "Debt Rating (A → F)"
+msgstr "Borç Notu (A → F)"
+
+msgid "Newest First"
+msgstr "En Yeni Önce"
